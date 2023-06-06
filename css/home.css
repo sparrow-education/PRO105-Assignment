@@ -1,0 +1,367 @@
+/* RESET DO NOT TOUCH */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  color: whitesmoke;
+  font-family: 'New Tegomin', monospace, helvetica;
+  background: black url(../images/bg.jpg) center;
+  background-size: 100%;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* HEADER ELEMENT FLEX PARENT */
+#topHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10px;
+  background-image: linear-gradient(45deg,  #300 30%, #900 100%);
+  border-radius: 25px;
+  min-width: 1024px;
+  width: 80%;
+  height: 150px;
+  left: 50%;
+  top: 5%;
+  box-shadow: 10px 15px 30px rgb(0, 0, 0);
+  /* border: 1px solid salmon; */
+
+  /* sticky option */
+  position: fixed;
+  transform: translateX(-50%);
+  z-index: 99999999999999999;
+
+  /* fixed option */
+  /* position: absolute;     
+        transform: translateX(-50%);
+        z-index: 99999999999999999; */
+}
+/* __________________________ ALERT EFFECT_______________________ */
+#blink {
+  margin: 0 auto;
+  padding: 0;
+  position: absolute;
+  left: 115px;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 100%;
+  box-shadow: 0px 0px 500px 100px rgb(36, 1, 1);
+  animation-name: blinkme;
+  animation-duration: 1800ms;
+  animation-iteration-count: infinite;
+}@keyframes blinkme {
+  0% {box-shadow: 0px 0px 500px 50px #fff;}
+  50% {box-shadow: -15px 0px 2500px 100px #cc0001;}
+  100% {box-shadow: 50px -15px 80px 100px #300;}
+  from { transform: rotate(0deg)}
+  to {transform: rotate(360deg);}
+}
+/* __________________________ ALERT EFFECT_______________________ */
+
+/* HEADER: list style */
+#mainNav li,
+a {
+  text-transform: uppercase;
+  font-family: 'New Tegomin', monospace, helvetica;
+  color: whitesmoke;
+  font-weight: 500;
+  font-size: 24px;
+  text-decoration: none;
+  list-style: none;
+  display: inline-block;
+}
+#mainNav li {
+  margin-right: 50px;
+}
+#mainNav a {
+  /* border: 1px solid salmon; */
+  padding: 25px;
+  box-shadow: 20px 15px 30px rgba(0, 0, 0, 0.35);
+  border-radius: 15px;
+  transition: rotate 5s linear 100ms;
+}
+#mainNav a:hover{
+  transform: rotate(3deg);
+
+}
+
+a:visited {
+  color: whitesmoke;
+}
+a:hover {
+  color: wheat;
+  font-weight: bold;
+  animation-name: txtTranslate;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+a:active {
+  color: #fff6cd;
+}
+
+@keyframes txtTranslate {
+  0% {color: whitesmoke;}
+  50% {color: #be0029;}
+  100% {color: whitesmoke;}
+}
+/* HEADER: images */
+#brLogo {
+  width: 250px;
+  animation-name: rotateLogo;
+  animation-duration: 2800ms;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-delay: 500ms;
+  opacity: 0.6;
+  transition: 0.3s;
+  /* border: 1px solid salmon; */
+}
+@keyframes rotateLogo {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+#brLogo:hover {
+  opacity: 1;
+}
+
+/* BODY SECTION ELEMENT FLEX PARENT */
+#bodySection {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 820px;
+  width: 75%;
+  height: 3200px;
+  background-color: rgba(0, 0, 0, 0.88);
+  /* border: 1px solid salmon; */
+}
+/* BODY logo container */
+#brTextdiv {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: absolute;
+  min-width: 800px;
+  max-height: 100px;
+  top: 250px;
+  /* border: 1px solid salmon; */
+}
+/* BODY logo */
+#brTextimg {
+  max-width: 800px;
+  min-width: 150px;
+  width: 100%;
+}
+
+/* Video container */
+#videoDiv {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 400px;
+  /* border: 1px solid salmon; */
+}
+#videoDiv video {
+  max-width: 1280px;
+  max-height: 720px;
+  min-width: 640px;
+  min-height: 480px;
+  width: 50vw;
+}
+/* Buffer for sticky position -__-' */
+#buffer {
+  /* border: 1px solid green; */
+  position: absolute;
+  height: 50px;
+  top: 950px;
+}
+/* Text container */
+#articleDiv {
+  position: absolute;
+  max-width: 1024px;
+  width: 100%;
+  height: 800px;
+  bottom: 1200px;
+  white-space: normal;
+  word-wrap: break-word;
+  font-family: monospace;
+  font-size: 1.5em;
+  line-height: 1.5;
+  font-weight: 900;
+  /* border: 1px solid salmon; */
+}
+#articleDiv p::first-letter {
+  font-size: 1.625em;
+  color: #cc0001;
+}
+#articleDiv h1::first-letter {
+  font-size: 1.625em;
+  color: #cc0001;
+  margin: 0 0 10px 0;
+  padding: 10px 0 0 10px;
+  font-family: 'New Tegomin', monospace, helvetica;
+  
+}
+#articleDiv p {
+  margin: 0 0 10px 0;
+  padding: 10px 0 0 10px;
+  font-family: 'New Tegomin', monospace, helvetica;
+  font-size: 18px;
+  /* border: 1px solid salmon; */
+}
+/* Div on hover for translation of paragraphs */
+/* !alert! */
+.textDivs {
+  margin: 0 0 0 0;
+  height: 250px;
+  position: absolute;
+  display: inline-block;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid red; */
+  /* background-color: red */
+}
+#text2 {
+  top: 300px;
+}#text3 {
+  top: 450px;
+}
+
+#text1:hover::before  {
+  position: absolute;
+  content: "At the beginning of the new century, a country was broken. Due to the economic crisis, the unemployment rate reached 15% and the number of unemployed exceeded 10 million. Children are out of control in a world where they cannot rely on adults, and class and family breakdowns are occurring in many places. The number of juvenile crimes is on the rise, and the number of students not attending school is 800,000. The number of teachers killed in the line of duty due to school violence has surpassed 1,200. Adults, losing confidence and fearing for their children, eventually passed a bill and put it into effect. This was the New Century Education Reform Act, commonly known as the 「BR Act」. This law was enacted with the aim of using death, which everyone fears, to regain the dignity of adults by controlling them through fear. Once a year, a class of third-graders from junior high schools across the country is selected and forced to kill each other on a computer-controlled, inescapable desert island until they are the last one standing within a time limit of three days. It is a law.";
+  font-size: 14px;
+  margin: 0 auto;
+  padding: 15px 5px 5px 15px;
+  transition-delay: 2s;
+  background-color: rgba(204, 0, 0, 0.4);
+}
+#text2:hover::before  {
+  position: absolute;
+  content: "This time, it was the students of Shiroiwa Gakuen Junior High School Class 3B who were chosen for the BR method. The students, who were supposed to be on a bus for a school trip, were put to sleep by hypnotic gas and brought to a deserted island, where they were given food and weapons by their former homeroom teacher, Kitano, and the game began. The students, trapped in a state of extremes, take various actions. Some will kill their friends from yesterday; some will give up and choose to die with their loved ones, and some will join forces to try to avert the situation. Some are slaughtered by Kazuo Kiriyama, a transfer student who volunteers himself to join the game...";
+  font-size: 14px;
+  margin: 0 auto;
+  padding: 15px 5px 5px 15px;
+  transition-delay: 2s;
+  background-color: rgba(204, 0, 0, 0.4);
+}
+#text3:hover::before  {
+  position: absolute;
+  content: "One of the students, Akiya Nanahara, decides to take up arms to protect Noriko Nakagawa, whom his best friend Keitoki Kuninobu, who grew up in the same orphanage, has a faint crush on. He tries to escape from the island with a transfer student, Shogo Kawada, who participated in the game as a guessing horse.";
+  font-size: 14px;
+  margin: 0 auto;
+  padding: 15px 5px 5px 15px;
+  transition-delay: 2s;
+  background-color: rgba(204, 0, 0, 0.4);
+}
+
+
+/* _______ARTICLE TEXT TRANSITION EFFECTS_______ */
+#text1 > p {
+  opacity:1;
+  transition: opacity 480ms, linear 580ms;
+}
+#text1:hover > p {
+  opacity: 0;
+}
+#text2 > p {
+  opacity:1;
+  transition: opacity 480ms, linear 580ms;
+}
+#text2:hover > p {
+  opacity: 0;
+}
+#text3 > p {
+  opacity:1;
+  transition: opacity 480ms, linear 580ms;
+}
+#text3:hover > p {
+  opacity: 0;
+}
+
+/* _______ARTICLE TEXT TRANSITION EFFECTS_______ */
+
+
+/* Gallery container _RELATIVE_ */
+#picDiv {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  position: absolute;
+  margin: 0 auto;
+  bottom: 250px;
+  min-width: 1024px;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  /* border: 1px solid salmon; */
+}
+
+#picDiv img {
+  position: relative;
+  max-width: 350px;
+  width: 50%;
+  border-radius: 50%;
+}
+#picDiv img:hover {
+  animation-name: moveme;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+@keyframes moveme {
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: 20px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+/* #picDiv img:hover {
+  transform: scaleX(-1);
+  box-shadow: 0 5px #cc0001;
+  animation-name: rotatepic;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+} 
+@keyframes rotatepic {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+
+/* X * failed responsive attempts */
+@media screen and (max-width: 1024px) {
+  #picDiv,
+  img {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  * {
+    overflow: hidden;
+  }
+}
+
